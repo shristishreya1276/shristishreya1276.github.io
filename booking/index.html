@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>CallDesk — Simple Booking</title>
+    <link rel="stylesheet" href="./styles.css" />
+  </head>
+  <body>
+    <main class="container">
+      <header class="hero card">
+        <p class="badge">Topmate Alternative MVP</p>
+        <h1>Accept call requests only after your approval.</h1>
+        <p>
+          Built for creators who need manual confirmation, clean timezone handling,
+          and India-first payouts.
+        </p>
+      </header>
+
+      <section class="grid">
+        <article class="card">
+          <h2>1) Request a call</h2>
+          <form id="request-form" class="stack">
+            <label>
+              Visitor name
+              <input required id="name" placeholder="e.g., Priya" />
+            </label>
+
+            <label>
+              Email
+              <input required id="email" type="email" placeholder="priya@email.com" />
+            </label>
+
+            <label>
+              Timezone
+              <select id="timezone" required></select>
+            </label>
+
+            <label>
+              Preferred time (local)
+              <input id="localDateTime" type="datetime-local" required />
+            </label>
+
+            <label>
+              Topic
+              <textarea id="topic" rows="3" placeholder="What would you like to discuss?"></textarea>
+            </label>
+
+            <button type="submit">Submit request</button>
+          </form>
+          <p class="muted">
+            A request does <strong>not</strong> auto-confirm. It goes to your queue first.
+          </p>
+        </article>
+
+        <article class="card">
+          <h2>2) Host approval queue</h2>
+          <div id="queue" class="stack"></div>
+        </article>
+
+        <article class="card">
+          <h2>3) Confirmed calls</h2>
+          <div id="confirmed" class="stack"></div>
+        </article>
+      </section>
+
+      <section class="card">
+        <h2>India-first payments (recommended stack)</h2>
+        <ul>
+          <li>
+            <strong>Collect:</strong> Razorpay Payment Links / Checkout (cards, UPI,
+            netbanking).
+          </li>
+          <li>
+            <strong>Payouts:</strong> Razorpay Route to split and settle to your
+            parent's Indian account.
+          </li>
+          <li>
+            <strong>Escrow style:</strong> keep payment authorized until you click
+            Approve.
+          </li>
+        </ul>
+      </section>
+    </main>
+
+    <script src="./app.js"></script>
+  </body>
+</html>
